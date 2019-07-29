@@ -1,80 +1,42 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!DOCTYPE html>
 <html>
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="1671.5">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 14.0px; font: 12.0px Helvetica; color: #000000; -webkit-text-stroke: #000000}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 14.0px; font: 13.0px 'Helvetica Neue'; color: #0000e9; -webkit-text-stroke: #0000e9}
-    span.s1 {font-kerning: none}
-    span.s2 {font: 12.0px 'PingFang SC'; font-kerning: none}
-    span.s3 {font: 12.0px Helvetica; font-kerning: none; color: #000000; -webkit-text-stroke: 0px #000000}
-    span.s4 {font: 13.0px 'Helvetica Neue'; text-decoration: underline ; font-kerning: none; color: #0000e9; -webkit-text-stroke: 0px #0000e9}
-    span.Apple-tab-span {white-space:pre}
-  </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <title>二维码下载</title>
+
 </head>
 <body>
-<p class="p1"><span class="s1">&lt;html&gt; <span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;head&gt; <span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8" /&gt; <span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;title&gt;</span><span class="s2">二维码下载</span><span class="s1">&lt;/title&gt;<span class="Apple-converted-space">     </span></span></p>
-<p class="p1"><span class="s1"><br>
-</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;script type="text/javascript"&gt; <span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>/* <span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">             </span>* </span><span class="s2">智能机浏览器版本信息</span><span class="s1">: <span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">             </span>* <span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">             </span>*/ <span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>var browser = { <span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>versions: function() { <span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>var u = navigator.userAgent, app = navigator.appVersion; <span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>return {//</span><span class="s2">移动终端浏览器版本信息</span><span class="s1"> <span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>trident: u.indexOf('Trident') &gt; -1, //IE</span><span class="s2">内核</span><span class="s1"> <span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>presto: u.indexOf('Presto') &gt; -1, //opera</span><span class="s2">内核</span><span class="s1"> <span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>webKit: u.indexOf('AppleWebKit') &gt; -1, //</span><span class="s2">苹果、谷歌内核</span><span class="s1"> <span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>gecko: u.indexOf('Gecko') &gt; -1 &amp;&amp; u.indexOf('KHTML') == -1, //</span><span class="s2">火狐内核</span><span class="s1"> <span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>mobile: !!u.match(/AppleWebKit.*Mobile.*/) || !!u.match(/AppleWebKit/), //</span><span class="s2">是否为移动终端</span><span class="s1"> <span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios</span><span class="s2">终端</span><span class="s1"> <span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>android: u.indexOf('Android') &gt; -1 || u.indexOf('Linux') &gt; -1, //android</span><span class="s2">终端或者</span><span class="s1">uc</span><span class="s2">浏览器</span><span class="s1"> <span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>iPhone: u.indexOf('iPhone') &gt; -1 || u.indexOf('Mac') &gt; -1, //</span><span class="s2">是否为</span><span class="s1">iPhone</span><span class="s2">或者</span><span class="s1">QQHD</span><span class="s2">浏览器</span><span class="s1"> <span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>iPad: u.indexOf('iPad') &gt; -1, //</span><span class="s2">是否</span><span class="s1">iPad <span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>webApp: u.indexOf('Safari') == -1 //</span><span class="s2">是否</span><span class="s1">web</span><span class="s2">应该程序，没有头部与底部</span><span class="s1"> <span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>}; <span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>}(), <span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>language: (navigator.browserLanguage || navigator.language).toLowerCase() <span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>} <span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1"><br>
-</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>if (browser.versions.ios || browser.versions.iPhone || browser.versions.iPad) { <span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1">// TODO </span><span class="s2">此处写</span><span class="s1">ios</span><span class="s2">的下载地址</span><span class="s1"> <span class="Apple-converted-space">             </span></span></p>
-<p class="p2"><span class="s3"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-converted-space">  </span>window.location="<a href="https://itunes.apple.com/us/app/id1471470884?l=zh&amp;ls=1&amp;mt=8"><span class="s4">https://itunes.apple.com/us/app/id1471470884?l=zh&amp;ls=1&amp;mt=8</span></a>"; <span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>} <span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>else if (browser.versions.android) { <span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>// </span><span class="s2">此处写</span><span class="s1">Andoird </span><span class="s2">的下载地址</span><span class="s1"> <span class="Apple-converted-space">           </span></span></p>
-<p class="p2"><span class="s3"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-converted-space">  </span>window.location="<a href="https://sevenact.oss-cn-hangzhou.aliyuncs.com/apk/rubbish-v1.0.0-guanwnag.apk"><span class="s4">https://sevenact.oss-cn-hangzhou.aliyuncs.com/apk/rubbish-v1.0.0-guanwnag.apk</span></a>"; <span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>} <span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1"><br>
-</span></p>
-<p class="p1"><span class="s1">//<span class="Apple-converted-space">            </span>document.writeln("</span><span class="s2">语言版本</span><span class="s1">: " + browser.language); <span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1">//<span class="Apple-converted-space">            </span>document.writeln(" </span><span class="s2">是否为移动终端</span><span class="s1">: " + browser.versions.mobile); <span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1">//<span class="Apple-converted-space">            </span>document.writeln(" ios</span><span class="s2">终端</span><span class="s1">: " + browser.versions.ios); <span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1">//<span class="Apple-converted-space">            </span>document.writeln(" android</span><span class="s2">终端</span><span class="s1">: " + browser.versions.android); <span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1">//<span class="Apple-converted-space">            </span>document.writeln(" </span><span class="s2">是否为</span><span class="s1">iPhone: " + browser.versions.iPhone); <span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1">//<span class="Apple-converted-space">            </span>document.writeln(" </span><span class="s2">是否</span><span class="s1">iPad: " + browser.versions.iPad); <span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1">//<span class="Apple-converted-space">            </span>document.writeln(navigator.userAgent); <span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1"><br>
-</span></p>
-<p class="p1"><span class="s1"><br>
-</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/script&gt; <span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/head&gt; <span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;body&gt; <span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1"><br>
-</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/body&gt; <span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1">&lt;/html&gt; <span class="Apple-converted-space"> </span></span></p>
+
 </body>
+<script type="text/javascript">
+    var browser = {
+        versions: function() {
+            var u = navigator.userAgent, app = navigator.appVersion;
+            return {//移动终端浏览器版本信息
+                trident: u.indexOf('Trident') > -1, //IE内核
+                presto: u.indexOf('Presto') > -1, //opera内核
+                webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+                gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+                mobile: !!u.match(/AppleWebKit.*Mobile.*/) || !!u.match(/AppleWebKit/), //是否为移动终端
+                ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+                android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+                iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者QQHD浏览器
+                iPad: u.indexOf('iPad') > -1, //是否iPad
+                webApp: u.indexOf('Safari') == -1 //是否web应该程序，没有头部与底部
+            };
+        }(),
+        language: (navigator.browserLanguage || navigator.language).toLowerCase()
+    }
+
+    if (browser.versions.ios || browser.versions.iPhone || browser.versions.iPad) {
+// TODO 此处写ios的下载地址
+        window.location="https://itunes.apple.com/us/app/id1471470884?l=zh&ls=1&mt=8";
+    }
+    else if (browser.versions.android) {
+        // 此处写Andoird 的下载地址
+        window.location="https://sevenact.oss-cn-hangzhou.aliyuncs.com/apk/rubbish-v1.0.0-guanwnag.apk";
+    }
+</script>
+
 </html>
